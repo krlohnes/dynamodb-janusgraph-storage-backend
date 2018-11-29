@@ -65,7 +65,7 @@ public class MultiDynamoDBGraphTest extends AbstractDynamoDBGraphTest {
     @Test(expected = IllegalArgumentException.class)
     @Override
     @Category({MultiDynamoDBGraphTestCategory.class, MultipleItemTestCategory.class })
-    public void testSettingTTLOnUnsupportedType() throws Exception {
+    public void testSettingTTLOnUnsupportedType() {
         super.testSettingTTLOnUnsupportedType();
     }
 
@@ -100,7 +100,7 @@ public class MultiDynamoDBGraphTest extends AbstractDynamoDBGraphTest {
     @Test(expected = IllegalArgumentException.class)
     @Override
     @Category({MultiDynamoDBGraphTestCategory.class, MultipleItemTestCategory.class })
-    public void testGetTTLFromUnsupportedType() throws Exception {
+    public void testGetTTLFromUnsupportedType() {
         super.testGetTTLFromUnsupportedType();
     }
 
@@ -142,7 +142,7 @@ public class MultiDynamoDBGraphTest extends AbstractDynamoDBGraphTest {
     @Test
     @Override
     @Category({MultiDynamoDBGraphTestCategory.class, MultipleItemTestCategory.class })
-    public void testBasic() {
+    public void testBasic() throws BackendException {
         super.testBasic();
     }
 
@@ -268,7 +268,7 @@ public class MultiDynamoDBGraphTest extends AbstractDynamoDBGraphTest {
     @Test
     @Override
     @Category({MultiDynamoDBGraphTestCategory.class, MultipleItemTestCategory.class })
-    public void testDataTypes() throws Exception {
+    public void testDataTypes() {
         super.testDataTypes();
     }
 
@@ -352,7 +352,7 @@ public class MultiDynamoDBGraphTest extends AbstractDynamoDBGraphTest {
     @Test(expected = IllegalArgumentException.class)
     @Override
     @Category({MultiDynamoDBGraphTestCategory.class, MultipleItemTestCategory.class })
-    public void testSettingTTLOnNonStaticVertexLabel() throws Exception {
+    public void testSettingTTLOnNonStaticVertexLabel() {
         super.testSettingTTLOnNonStaticVertexLabel();
     }
 

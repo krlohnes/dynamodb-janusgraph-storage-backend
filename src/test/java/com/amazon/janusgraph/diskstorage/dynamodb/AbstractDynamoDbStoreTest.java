@@ -67,13 +67,14 @@ public abstract class AbstractDynamoDbStoreTest extends KeyColumnValueStoreTest
 
     @Override
     public void testConcurrentGetSliceAndMutate() throws ExecutionException, InterruptedException, BackendException {
-        testConcurrentStoreOps(true, NUM_COLUMNS);
+        testConcurrentStoreOps(true);
     }
 
     @Override
     public void testConcurrentGetSlice() throws ExecutionException, InterruptedException, BackendException {
-        testConcurrentStoreOps(false, NUM_COLUMNS);
+        testConcurrentStoreOps(false);
     }
+
     @Before
     public void setUp() throws Exception {
         super.setUp();

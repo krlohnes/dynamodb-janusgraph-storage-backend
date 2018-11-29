@@ -76,6 +76,6 @@ public abstract class AbstractDynamoDBGraphConcurrentTest extends JanusGraphConc
     @Override
     public void testStandardIndexVertexPropertyReads() throws InterruptedException, ExecutionException {
         //this test takes too long so reduce the number of threads
-        testStandardIndexVertexPropertyReadsLogic(4 /*numThreads*/);
+        testStandardIndexVertexPropertyReadsLogic();
     }
 }

@@ -20,8 +20,8 @@
         <jdk.version>1.8</jdk.version>
         <aws.java.sdk.version>1.11.336</aws.java.sdk.version>
         <jackson.version>2.6.6</jackson.version>
-        <janusgraph.version>0.2.0</janusgraph.version>
-        <tinkerpop.version>3.2.6</tinkerpop.version>
+        <janusgraph.version>0.3.0</janusgraph.version>
+        <tinkerpop.version>3.3.3</tinkerpop.version>
         <dependency.plugin.version>3.0.2</dependency.plugin.version>
         <maven.assembly.plugin.version>3.1.0</maven.assembly.plugin.version>
         <maven.compiler.plugin.version>3.6.2</maven.compiler.plugin.version>
@@ -35,7 +35,7 @@
         <metrics3.version>3.0.1</metrics3.version>
         <commons.logging.version>1.1.1</commons.logging.version>
         <hadoop.version>2.2.0</hadoop.version>
-        <mockito.version>1.8.5</mockito.version>
+        <mockito.version>1.10.19</mockito.version>
         <lombok.version>1.16.18</lombok.version>
         <docker.maven.version>0.4.13</docker.maven.version>
         <commonsio.version>2.3</commonsio.version>
@@ -45,8 +45,8 @@
         <include.category></include.category>
         <exclude.category></exclude.category>
         <test.excluded.groups>org.janusgraph.testcategory.MemoryTests,org.janusgraph.testcategory.PerformanceTests,org.janusgraph.testcategory.BrittleTests,org.janusgraph.testcategory.OrderedKeyStoreTests,org.janusgraph.testcategory.SerialTests</test.excluded.groups>
-	<download.skip.cache>false</download.skip.cache>
-	<download.force.overwrite>false</download.force.overwrite>
+        <download.skip.cache>false</download.skip.cache>
+        <download.force.overwrite>false</download.force.overwrite>
         <junit.version>4.12</junit.version>
     </properties>
     <developers>
@@ -316,6 +316,19 @@
     <build>
         <plugins>
             <plugin>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok-maven-plugin</artifactId>
+              <version>1.18.4.0</version>
+              <executions>
+                <execution>
+                  <phase>generate-sources</phase>
+                  <goals>
+                    <goal>delombok</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>3.0.4</version>
@@ -409,7 +422,7 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
-                <!-- Use the single-integration-tests and multi-integration-tests 
+                <!-- Use the single-integration-tests and multi-integration-tests
                     profiles below -->
                 <configuration>
                     <skip>true</skip>
@@ -486,8 +499,8 @@
                                     <url>https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.zip</url>
                                     <unpack>true</unpack>
                                     <outputDirectory>${project.build.directory}/dynamodb</outputDirectory>
-				    <skipCache>${download.skip.cache}</skipCache>
-				    <overwrite>${download.force.overwrite}</overwrite>
+                                    <skipCache>${download.skip.cache}</skipCache>
+                                    <overwrite>${download.force.overwrite}</overwrite>
                                 </configuration>
                             </execution>
                         </executions>
@@ -577,9 +590,9 @@
                                 <configuration>
                                     <url>https://github.com/JanusGraph/janusgraph/releases/download/v${janusgraph.version}/janusgraph-${janusgraph.version}-hadoop2.zip</url>
                                     <unpack>false</unpack>
-				    <outputDirectory>${project.build.directory}/../server</outputDirectory>
-				    <skipCache>${download.skip.cache}</skipCache>
-				    <overwrite>${download.force.overwrite}</overwrite>
+                                    <outputDirectory>${project.build.directory}/../server</outputDirectory>
+                                    <skipCache>${download.skip.cache}</skipCache>
+                                    <overwrite>${download.force.overwrite}</overwrite>
                                 </configuration>
                             </execution>
                         </executions>
@@ -605,8 +618,8 @@
                                     <url>https://s3-us-west-2.amazonaws.com/dynamodb-local/dynamodb_local_latest.zip</url>
                                     <unpack>true</unpack>
                                     <outputDirectory>${project.build.directory}/dynamodb</outputDirectory>
-				    <skipCache>${download.skip.cache}</skipCache>
-				    <overwrite>${download.force.overwrite}</overwrite>
+                                    <skipCache>${download.skip.cache}</skipCache>
+                                    <overwrite>${download.force.overwrite}</overwrite>
                                 </configuration>
                             </execution>
                         </executions>

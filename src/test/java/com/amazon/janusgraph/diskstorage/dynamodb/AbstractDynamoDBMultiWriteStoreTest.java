@@ -82,6 +82,6 @@ public abstract class AbstractDynamoDBMultiWriteStoreTest extends MultiWriteKeyC
     @Override
     @Test
     public void mutateManyStressTest() throws BackendException {
-        this.mutateManyStressTestWithVariableRounds(1);
+        this.mutateManyStressTestWithVariableRounds();
     }
 }

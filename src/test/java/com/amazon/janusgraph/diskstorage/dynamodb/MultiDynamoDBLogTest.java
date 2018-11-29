@@ -38,7 +38,7 @@ public class MultiDynamoDBLogTest extends AbstractDynamoDBLogTest {
     @Override
     @Test
     public void mediumSendReceiveSerial() throws Exception {
-        simpleSendReceive(2000,50, LONGER_TIMEOUT_MS);
+        simpleSendReceive(2000, 50);
     }
     @Override
     @Test
