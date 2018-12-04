@@ -2,7 +2,7 @@ language: java
 sudo: required
 dist: trusty
 jdk:
-  - oraclejdk8
+  - openjdk8
 cache:
   directories:
     - "${HOME}/.m2"
@@ -45,16 +45,15 @@ env:
   #2.8 minutes
     - MODULE="MultiMultiWriteStoreTestCategory" CATEGORY="MultiDynamoDBMultiWriteStoreTestCategory"
   #To be added
-    - MODULE="GraphSimpleLogTest" CATEGORY="GraphSimpleLogTestCategory"
+  #  - MODULE="GraphSimpleLogTest" CATEGORY="GraphSimpleLogTestCategory"
 addons:
   apt:
     packages:
       - oracle-java8-installer
 branches:
   only:
-    - 1.0.0
     - master
-    - janusgraph
+    - jg-0.3.0
 script:
   #build the matrix item
   - mvn install -P integration-tests -Dgroups="com.amazon.janusgraph.testcategory.${CATEGORY}" -Dinclude.category="**/*.java"
@@ -64,5 +63,4 @@ script:
   #- aws cloudformation validate-template --region us-west-2 --template-body `pwd | sed -e 's/\//\/\//g' -e 's/^/file:\//' -e 's/$/\/\/dynamodb-janusgraph-tables-multiple\.yaml/'`
 notifications:
   email:
-    - amcp@amazon.co.jp
-    - johanjcbs@gmail.com
+    - lohnesk@gmail.com

@@ -18,7 +18,7 @@
         <dynamodb-local.port>4567</dynamodb-local.port>
         <dynamodb-local.endpoint>http://localhost:${dynamodb-local.port}</dynamodb-local.endpoint>
         <jdk.version>1.8</jdk.version>
-        <aws.java.sdk.version>1.11.336</aws.java.sdk.version>
+        <aws.java.sdk.version>1.11.369</aws.java.sdk.version>
         <jackson.version>2.6.6</jackson.version>
         <janusgraph.version>0.3.0</janusgraph.version>
         <tinkerpop.version>3.3.3</tinkerpop.version>
@@ -27,9 +27,9 @@
         <maven.compiler.plugin.version>3.6.2</maven.compiler.plugin.version>
         <maven.surefire.version>2.20</maven.surefire.version>
         <maven.failsafe.version>2.20</maven.failsafe.version>
-        <maven.resources.plugin.version>3.0.2</maven.resources.plugin.version>
+        <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
         <exec.maven.plugin.version>1.6.0</exec.maven.plugin.version>
-        <download.maven.plugin.version>1.2.1</download.maven.plugin.version>
+        <download.maven.plugin.version>1.4.1</download.maven.plugin.version>
         <slf4j.version>1.7.12</slf4j.version>
         <opencsv.version>3.8</opencsv.version>
         <metrics3.version>3.0.1</metrics3.version>
@@ -428,7 +428,6 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -554,6 +553,7 @@
                                     <goal>verify</goal>
                                 </goals>
                                 <configuration>
+                                    <forkMode>always</forkMode>
                                     <excludedGroups>${test.excluded.groups},${exclude.category}</excludedGroups>
                                     <includes>
                                         <include>${include.category}</include>
@@ -573,7 +573,7 @@
                 </plugins>
             </build>
         </profile>
-        <profile>
+        <!--profile>
             <id>download-janusgraph-server-zip</id>
             <build>
                 <plugins>
@@ -599,7 +599,7 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
+        </profile-->
         <profile>
             <id>start-dynamodb-local</id>
             <build>
@@ -643,6 +643,7 @@
                                         <argument>${dynamodb-local.port}</argument>
                                         <argument>-sharedDb</argument>
                                     </arguments>
+                                    <async>true</async>
                                 </configuration>
                                 <goals>
                                     <goal>exec</goal>
