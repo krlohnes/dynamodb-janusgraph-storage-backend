@@ -554,6 +554,7 @@
                                 </goals>
                                 <configuration>
                                     <forkMode>always</forkMode>
+                                    <trimStackTrace>false</trimStackTrace>
                                     <excludedGroups>${test.excluded.groups},${exclude.category}</excludedGroups>
                                     <includes>
                                         <include>${include.category}</include>
