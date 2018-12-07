@@ -14,6 +14,8 @@
  */
 package com.amazon.janusgraph.graphdb.dynamodb;
 
+import java.util.Collections;
+
 import org.janusgraph.diskstorage.BackendException;
 import org.janusgraph.diskstorage.configuration.WriteConfiguration;
 import org.janusgraph.olap.OLAPTest;
@@ -40,15 +42,19 @@ public abstract class AbstractDynamoDBOLAPTest extends OLAPTest {
 
     private final CiHeartbeat ciHeartbeat;
     protected final BackendDataModel model;
+    protected WriteConfiguration writeConfig = null;
     protected AbstractDynamoDBOLAPTest(final BackendDataModel model) {
         this.model = model;
         this.ciHeartbeat = new CiHeartbeat();
     }
 
     @Override
-    public WriteConfiguration getConfiguration()
-    {
-        return TestGraphUtil.instance.graphConfig(model);
+    public WriteConfiguration getConfiguration() {
+        if (writeConfig == null) {
+            WriteConfiguration baseConfig = TestGraphUtil.instance.graphConfig(model);
+            writeConfig = TestGraphUtil.instance.appendStoreConfig(model, baseConfig.copy(), Collections.singletonList("ids"));
+        }
+        return writeConfig;
     }
 
     @AfterClass
