@@ -54,7 +54,7 @@ public abstract class AbstractDynamoDBLogTest extends KCVSLogTest {
         logNames.add("fuzz");
         logNames.add("testx");
         final WriteConfiguration wc = TestGraphUtil.instance.getStoreConfig(model, logNames);
-        final BasicConfiguration config = new BasicConfiguration(GraphDatabaseConfiguration.ROOT_NS, wc.copy(),
+        final BasicConfiguration config = new BasicConfiguration(GraphDatabaseConfiguration.ROOT_NS, wc,
             BasicConfiguration.Restriction.NONE);
 
         return new DynamoDBStoreManager(config);
