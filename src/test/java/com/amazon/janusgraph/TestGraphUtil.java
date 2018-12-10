@@ -118,7 +118,7 @@ public enum TestGraphUtil {
 
         return properties;
     }
-    
+
     private Configuration createTestConfig(final BackendDataModel backendDataModel) {
         final Configuration properties = loadProperties();
         final Configuration dynamodb = properties.subset("storage").subset("dynamodb");
@@ -184,7 +184,7 @@ public enum TestGraphUtil {
             final String key = it.next();
             config.set(key, baseconfig.getProperty(key));
         }
-        
+
         Preconditions.checkArgument(janusGraphClusterPartitions > 0);
         if(janusGraphClusterPartitions > 1) {
             config.set("cluster.max-partitions", Integer.toString(janusGraphClusterPartitions));
