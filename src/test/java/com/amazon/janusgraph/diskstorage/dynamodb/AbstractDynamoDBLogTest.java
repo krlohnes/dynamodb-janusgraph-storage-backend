@@ -42,17 +42,17 @@ public abstract class AbstractDynamoDBLogTest extends KCVSLogTest {
     public KeyColumnValueStoreManager openStorageManager() throws BackendException {
         final List<String> logNames = new ArrayList<>(12);
         logNames.add("namespace1");
-        //logNames.add("durable");
-        //logNames.add("ml0");
-        //logNames.add("ml1");
-        //logNames.add("ml2");
-        //logNames.add("loner0");
-        //logNames.add("loner1");
-        //logNames.add("loner2");
-        //logNames.add("loner3");
-        //logNames.add("loner4");
-        //logNames.add("fuzz");
-        //logNames.add("testx");
+        logNames.add("durable");
+        logNames.add("ml0");
+        logNames.add("ml1");
+        logNames.add("ml2");
+        logNames.add("loner0");
+        logNames.add("loner1");
+        logNames.add("loner2");
+        logNames.add("loner3");
+        logNames.add("loner4");
+        logNames.add("fuzz");
+        logNames.add("testx");
         final WriteConfiguration wc = TestGraphUtil.instance.getStoreConfig(model, logNames);
         final BasicConfiguration config = new BasicConfiguration(GraphDatabaseConfiguration.ROOT_NS, wc.copy(),
             BasicConfiguration.Restriction.NONE);
