@@ -16,6 +16,7 @@ package com.amazon.janusgraph.graphdb.dynamodb;
 
 import org.janusgraph.diskstorage.BackendException;
 import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import com.amazon.janusgraph.diskstorage.dynamodb.BackendDataModel;
@@ -43,6 +44,7 @@ public class MultiDynamoDBOLAPTest extends AbstractDynamoDBOLAPTest {
     }
 
     @Override
+    @Test
     @Ignore("Sporadically passes, this test is brittle")
     public void degreeCountingDistance() throws Exception {
         super.degreeCountingDistance();
