@@ -128,8 +128,7 @@ public abstract class AbstractDynamoDBGraphTest extends JanusGraphTest {
         final String name = "name";
 
         // Load Graph of the Gods
-        GraphOfTheGodsFactory.loadWithoutMixedIndex(graph,
-                false); // True makes the index on names unique.  Test fails when this is true.
+        GraphOfTheGodsFactory.loadWithoutMixedIndex(graph, false); // True makes the index on names unique.  Test fails when this is true.
         // Change to false and test will pass.
         newTx();
         finishSchema();

@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutionException;
 
 import org.janusgraph.diskstorage.BackendException;
 import org.janusgraph.diskstorage.configuration.WriteConfiguration;
-import org.janusgraph.testcategory.BrittleTests;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -402,7 +402,7 @@ public class SingleDynamoDBGraphTest extends AbstractDynamoDBGraphTest {
 
     @Test
     @Override
-    @Category({SingleDynamoDBGraphTestCategory.class, SingleItemTestCategory.class })
+    @Ignore("Brittle test")
     public void testGotGIndexRemoval() throws InterruptedException, ExecutionException {
         super.testGotGIndexRemoval();
     }
@@ -479,7 +479,7 @@ public class SingleDynamoDBGraphTest extends AbstractDynamoDBGraphTest {
 
     @Test
     @Override
-    @Category({BrittleTests.class})
+    @Ignore("Brittle Test")
     public void testIndexUpdateSyncWithMultipleInstances() throws InterruptedException {
         //This test is one of the most brittle in the JG test suite. Disabling it for Travis.
         //It will pass when everything goes exactly right timing wise.
