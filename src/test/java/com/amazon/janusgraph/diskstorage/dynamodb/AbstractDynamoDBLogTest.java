@@ -52,6 +52,7 @@ public abstract class AbstractDynamoDBLogTest extends KCVSLogTest {
         logNames.add("loner3");
         logNames.add("loner4");
         logNames.add("fuzz");
+        logNames.add("testx");
         logNames.add("test1");
         final WriteConfiguration wc = TestGraphUtil.instance.getStoreConfig(model, logNames);
         final BasicConfiguration config = new BasicConfiguration(GraphDatabaseConfiguration.ROOT_NS, wc,
