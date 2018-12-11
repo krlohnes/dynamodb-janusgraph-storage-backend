@@ -15,7 +15,7 @@
 
 JanusGraph + DynamoDB = Distributed Graph Database - Cluster Host Management
 
-[![Build Status](https://travis-ci.org/awslabs/dynamodb-janusgraph-storage-backend.svg?branch=master)](https://travis-ci.org/awslabs/dynamodb-janusgraph-storage-backend)
+[![Build Status](https://travis-ci.org/krlohnes/dynamodb-janusgraph-storage-backend.svg?branch=jg-0.3.0)](https://travis-ci.org/awslabs/dynamodb-janusgraph-storage-backend)
 
 ## Features
 The following is a list of features of the Amazon DynamoDB Storage Backend for
@@ -208,7 +208,7 @@ CloudFormation template that you just downloaded.
 6. On the Options page, click Next.
 7. On the Review page, select "I acknowledge that this template might cause AWS
 CloudFormation to create IAM resources." Then, click Create.
-8. Start the Gremlin console on the host through SSH. You can just copy paste the `GremlinShell` output of the 
+8. Start the Gremlin console on the host through SSH. You can just copy paste the `GremlinShell` output of the
 CloudFormation template and run it on your command line.
 9. Repeat steps 4 and onwards of the Marvel graph section above.
 
