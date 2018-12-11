@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.amazonaws</groupId>
     <artifactId>dynamodb-janusgraph-storage-backend</artifactId>
-    <version>1.2.0</version>
+    <version>1.3.0</version>
     <packaging>jar</packaging>
     <name>Amazon DynamoDB Storage Backend for JanusGraph</name>
     <url>https://github.com/awslabs/dynamodb-janusgraph-storage-backend</url>
